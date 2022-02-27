@@ -23,6 +23,23 @@ public class LinkedList {
 		}
 	}
 
+	public void addLast(Object data) {
+		Node newNode = new Node(data);
+
+		if (head == null)
+			head = newNode;
+		else if (head.ref == null)
+			head.ref = newNode;
+		else {
+			Node temp = head;
+
+			while (temp.ref != null) {
+				temp = temp.ref;
+			}
+			temp.ref = newNode;
+		}
+	}
+
 	public void display() {
 		if (head == null)
 			System.out.println("No elements to display.");
