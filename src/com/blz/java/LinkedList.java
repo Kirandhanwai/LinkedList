@@ -51,6 +51,22 @@ public class LinkedList {
 
 	}
 
+	public void popLast() {
+
+		if (head == null)
+			System.out.println("No elements to delete");
+		else if (head.ref == null)
+			head = null;
+		else {
+			Node temp = head;
+
+			while (temp.ref.ref != null) {
+				temp = temp.ref;
+			}
+			temp.ref = null;
+		}
+	}
+
 	public void display() {
 		if (head == null)
 			System.out.println("No elements to display.");
